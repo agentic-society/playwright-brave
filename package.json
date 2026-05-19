@@ -1,0 +1,33 @@
+{
+  "name": "playwright-brave",
+  "version": "0.1.0",
+  "description": "Use Brave browser with Playwright. Playwright doesn't support Brave out of the box — this package fixes that.",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": ["dist"],
+  "scripts": {
+    "build": "tsc",
+    "test": "node --require ts-node/register test/basic.test.ts",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": ["playwright", "brave", "browser", "automation", "testing", "chromium", "ai-agent", "opencode", "claude-code", "codex", "gemini-cli"],
+  "author": "Totem",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/totem/playwright-brave"
+  },
+  "homepage": "https://github.com/totem/playwright-brave#readme",
+  "bugs": {
+    "url": "https://github.com/totem/playwright-brave/issues"
+  },
+  "peerDependencies": {
+    "playwright": ">=1.40.0"
+  },
+  "devDependencies": {
+    "playwright": "^1.40.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0",
+    "@types/node": "^20.0.0"
+  }
+}
