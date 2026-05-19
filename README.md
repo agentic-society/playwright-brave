@@ -106,8 +106,8 @@ This package declares `playwright` as a peer dependency. When Microsoft updates 
 - [Playwright Documentation](https://playwright.dev/)
 - [Brave Browser](https://brave.com/)
 - [npm package](https://www.npmjs.com/package/playwright-brave)
-- [Source code](https://github.com/totem/playwright-brave)
-- [Report issues](https://github.com/totem/playwright-brave/issues)
+- [Source code](https://github.com/shhhubin/playwright-brave)
+- [Report issues](https://github.com/shhhubin/playwright-brave/issues)
 
 ## License
 

@@ -15,11 +15,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/totem/playwright-brave"
+    "url": "https://github.com/shhhubin/playwright-brave"
   },
-  "homepage": "https://github.com/totem/playwright-brave#readme",
+  "homepage": "https://github.com/shhhubin/playwright-brave#readme",
   "bugs": {
-    "url": "https://github.com/totem/playwright-brave/issues"
+    "url": "https://github.com/shhhubin/playwright-brave/issues"
   },
   "peerDependencies": {
     "playwright": ">=1.40.0"

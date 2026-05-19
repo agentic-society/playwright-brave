@@ -4,7 +4,6 @@ async function runTests() {
   const bravePath = detectBravePath();
   console.log('detectBravePath() returned:', bravePath);
 
-  // Test: launchBrave throws helpful error when BRAVE_PATH not set and Brave not found
   if (bravePath === null) {
     try {
       await launchBrave();
@@ -21,7 +20,6 @@ async function runTests() {
     }
   }
 
-  // Test: BRAVE_PATH override works even when auto-detect fails
   const savedBravePath = process.env.BRAVE_PATH;
   process.env.BRAVE_PATH = '/nonexistent/path/to/brave';
   try {
@@ -41,11 +39,12 @@ async function runTests() {
     delete process.env.BRAVE_PATH;
   }
 
-  // Test: launchBrave works when Brave is installed
   if (bravePath !== null) {
     console.log('Brave found at:', bravePath);
     try {
-      const browser = await launchBrave();
+      const browser = await launchBrave({
+        args: process.getuid?.() === 0 ? ['--no-sandbox'] : undefined,
+      });
       const page = await browser.newPage();
       await page.goto('https://example.com');
       const title = await page.title();

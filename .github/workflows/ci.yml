@@ -31,6 +31,8 @@ jobs:
       - run: npx playwright install chromium
       - name: Install Brave
         run: |
-          curl -fsSLo /tmp/brave.deb https://laptop-updates.brave.com/latest/amd64 --retry 3
-          sudo dpkg -i /tmp/brave.deb || sudo apt-get install -f -y
+          sudo curl -fsSLo /usr/share/keyrings/brave-browser-archive-keyring.gpg https://brave-browser-apt-release.s3.brave.com/brave-browser-archive-keyring.gpg
+          echo "deb [signed-by=/usr/share/keyrings/brave-browser-archive-keyring.gpg] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+          sudo apt-get update
+          sudo apt-get install -y brave-browser
       - run: npm test
